@@ -1,0 +1,18 @@
+*::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-left: 70px;
+    padding-right: 70px;
+    min-height: 100vh;
+   background-color: rgb(255, 255, 255);
+}
+.carousel-inner {
+    background-color: rgba(0, 255, 255, 0.434);
+}
+.carousel-caption , h3 , p {
+color: rgb(255, 255, 255);
+}

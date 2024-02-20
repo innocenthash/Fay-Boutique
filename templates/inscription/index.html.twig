@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page d'inscription{% endblock %}
+
+{% block contenue %}
+ <div class="container {% if block('carrousel') is not defined %} mt-5 {% endif %} ">
+   <h2>Inscription</h2>
+               
+                <div class="row">
+                <div class="col-12 col-sm-12 col-md-6">
+             {{ form(form) }}
+                </div>
+                <div class="col-12  col-sm-12 col-md-6">
+                        
+                </div>
+        </div>
+ </div>
+
+
+{% endblock %}
