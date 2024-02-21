@@ -6,12 +6,16 @@
  <div class="container {% if block('carrousel') is not defined %} mt-5 {% endif %} ">
    <h2>Inscription</h2>
                
-                <div class="row">
-                <div class="col-12 col-sm-12 col-md-6">
-             {{ form(form) }}
+                <div class="row  ">
+                <div class="col-12 col-sm-12 col-md-6 bg-light d-flex justify-content-center ">
+                   <div class="form_inscription w-75">
+        {{ form(form) }}
+</div>
                 </div>
-                <div class="col-12  col-sm-12 col-md-6">
-                        
+                <div class="col-12 img-height  col-sm-12 col-md-6 bg-danger px-0 order-sm-2"  >
+                                 
+                        <img src="{{asset('../assets/images/inscription.jpg')}}" class="img-fluid h-100 w-100 "  alt="" srcset="">
+             
                 </div>
         </div>
  </div>
