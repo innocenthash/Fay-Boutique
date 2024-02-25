@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les produits{% endblock %}
+
+{% block contenue %}
+
+
+<div class="container mt-3">
+<div class="row">
+         <div class="col-12 text-center text-capitalize">
+              <h6>Nos produits</h6><hr class=" ">
+           
+         </div>  
+      </div>
+       <div class="row ">
+        <div class="recherche col-12 col-sm-12 col-md-2 text-center text-capitalize">
+              <h6>Triage</h6><hr class=" ">
+                 {{ form(form) }}
+       </div>
+        {# <div class="block-listProduit bg-white d-flex flex-row"> #}
+                {% for produit in produits %}
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 gap-1 mb-2">
+              <div class="block-produit ">
+             
+                  <div class="image-produit position-relative  ">
+        <img src="uploads/images/{{ produit.illustration }}" class="img-fluid object-fit-cover" alt="" srcset="">
+         <div class="btn-plus position-absolute  m-1 text-center  rounded-2    ">
+        
+          <a href="{{ path('app_produits_sprecifique' , {'slug':produit.slug}) }}" > <i class="fas fa-plus "></i></a>
+       </div>
+       </div>
+                <div class="block-propriete">
+           <h6 class="font-weight-bold">🛍️{{ produit.nom }}</h6>
+           <p class="text-dark">✅{{ produit.soustitre }}</p>
+           <p  class="text-dark">✅{{ (produit.prix /100)|number_format('2', ',', '.') }}  <span>€</span></p>
+       </div>
+              </div>
+              
+
+          </div>
+
+         
+        {% endfor %}
+       {# </div> #}
+       
+         
+       </div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier mon mot de passe{% endblock %}
+
+{% block contenue %}
+
+
+<div class="container">
+  <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 mx-auto">
+           <div class="form-modifpass bg-white px-5 py-1 mt-2 border-0 rounded-3">
+           <div>
+              {% if notification %}
+              <div class="alert alert-info">
+              <p class="text-black text-center">{{notification}}</p>
+              </div>
+                
+              {% endif %}
+        <h5>Modifier mon mot de passe</h5>
+        <a href="{{ path('app_compte_utilisateur') }}">Retour à mon espace personnel</a>
+       </div><hr>
+        {{ form(form)}}
+           </div>
+        </div>
+  </div>
+     
+</div>
+{% endblock %}

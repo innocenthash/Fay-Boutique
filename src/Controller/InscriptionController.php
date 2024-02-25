@@ -25,6 +25,11 @@ class InscriptionController extends AbstractController
    
     public function index(Request $request , UserPasswordHasherInterface $hacher): Response
     {
+        // si l'utilisateur est connecté
+        if ($this->getUser()) {
+            return $this->redirectToRoute('app_compte_utilisateur');
+        }
+        $notification = null ;
         $user = new User() ;
         $form = $this->createForm(InscriptionType::class,$user) ;
 
@@ -36,11 +41,12 @@ class InscriptionController extends AbstractController
             $user->setPassword($password) ;
             $this->entityManager->persist($user) ;
             $this->entityManager->flush() ;
-
+      $notification = "compte créé avec succès !" ;
         }
 
         return $this->render('inscription/index.html.twig', [
-            'form'=>$form->createView()
+            'form'=>$form->createView() ,
+            'notification'=>$notification
         ]);
     }
 }

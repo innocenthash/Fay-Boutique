@@ -3,18 +3,32 @@
 {% block title %}Page d'inscription{% endblock %}
 
 {% block contenue %}
- <div class="container {% if block('carrousel') is not defined %} mt-5 {% endif %} ">
-   <h2>Inscription</h2>
+ <div class="container {% if block('carrousel') is not defined %} mt-1 {% endif %} ">
+   {% if notification %}
+     <div class="alert alert-success">
+       <p class="text-black" >{{notification}}</p>
+     </div>
+         
+   {% endif %}
+ 
                
-                <div class="row  ">
-                <div class="col-12 col-sm-12 col-md-6 bg-light d-flex justify-content-center ">
-                   <div class="form_inscription w-75">
+                <div class="row ">
+                <div class="col-12 col-sm-12   col-md-6 bg-white border-0 d-block d-md-flex  justify-content-center  ">
+                
+                   <div class="form_inscription   w-100  px-md-5">
+                   <h4 class="text-center">Inscription</h4>    <hr>
+                   <div class="logo text-center ">
+        <img src="{{ asset('assets/images/logov1.png') }}" alt="" srcset="">
+       </div>
+                     
         {{ form(form) }}
 </div>
                 </div>
-                <div class="col-12 img-height  col-sm-12 col-md-6 bg-danger px-0 order-sm-2"  >
+                <div class="col-12 d-none img-height m-0  col-sm-12 col-md-6 bg-light p-0   d-sm-flex  align-content-center" style="height:700px"  >
                                  
-                        <img src="{{asset('../assets/images/inscription.jpg')}}" class="img-fluid h-100 w-100 "  alt="" srcset="">
+                      <div class="">
+        <img src="{{asset('../assets/images/inscription.jpg')}}" class=" object-fit-cover  img-fluid h-100 w-auto "  alt="" srcset="">
+       </div> 
              
                 </div>
         </div>

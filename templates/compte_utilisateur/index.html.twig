@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte{% endblock %}
+
+{% block contenue %}
+{# <style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style> #}
+
+<div class="container">
+<div class="row">
+                <div class="col-12 col-sm-12 col-md-6 mx-auto  ">
+                  <div class="mon_compte bg-light p-5">
+                <h4>Mon compte ✅</h4>
+
+                <p class="text-black">Bienvenue {{ app.user.nom  }}|{{ app.user.prenom }}</p>
+                    <hr>
+                 <div class="block-infos">
+           <ul>
+                <li>
+
+<a href="{{ path('app_compte_utilisateur_password') }}">Modifier mon mot de passe</a>
+                </li>
+                <li>
+                       
+                       <a href="http://">Ajouter mes adresses ,</a>
+                </li>
+                <li>
+                     
+                      <a href="http://">  Mes commandes </a>
+                </li>
+           </ul>
+       </div>
+                 </div>
+                </div>
+        </div>
+   
+
+    {# {{ dump(app.user) }}  #}
+
+   
+</div>
+{% endblock %}

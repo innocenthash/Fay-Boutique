@@ -1,0 +1,5 @@
+.block-infos ul li ,.block-infos ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}

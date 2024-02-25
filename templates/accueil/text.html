@@ -25,4 +25,75 @@
                 </div>
         </div>
 
-       
+  <a href="{{ path('app_compte_utilisateur') }}"></a>
+       <p class="alert alert-success"></p>
+       <hr>
+       <div class="row">
+        
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="block-produit">
+                 <img src="{{ asset('uploads/images/') }}" alt="" srcset="">
+              </div>
+          </div>
+          <h1>{{ produit.nom }}</h1>
+       </div>
+
+       <div class="image-produit">
+        <img src="uploads/images/{{ produit.illustration }}" class="img-fluid object-fit-cover" alt="" srcset="">
+       </div>
+
+       <div class="block-propriete">
+           <h6>{{ produit.nom }}</h6>
+           <h6>{{ produit.soustitre }}</h6>
+        <h6>{{ (produit.prix/100[number_format(2,',','.')]) }} <span>€</span></h6>
+       </div>
+
+     
+
+       <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6">
+                   <div class="image-specifique">
+                        <img src="uploads/images/{{ produit.illustration }}" class="img-fluid object-fit-cover" alt="" srcset="">
+                   </div>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-6" >
+                    <div class="propriete">
+                        <div class="nom"></div>
+                        <div class="sous-titre"></div>
+                        <div class="prix"></div>
+                        <div class="description"></div>
+                    </div>
+                </div>
+            </div>
+       </div>
+
+       <img src="{{ asset('assets/images/{{  }}') }}" alt="" srcset="">
+       <p>
+        {{produit.nom}}
+       </p>
+       <p>
+        {{produit.soustitre}}
+       </p>
+       <p>
+        {{produit.prix}}
+       </p>
+       <p>
+        {{produit.description}}
+       </p>
+<i class="fas fa-shop"></i>
+       <div>
+          <button>Retour</button>
+          <button>Ajouter au panier</button>
+          <button>Nous contacter</button>
+       </div>
+       <hr class="w-75">
+
+      <h6>Triage</h6>
+
+      <div class="row">
+         <div class="col-12">
+              <h6>Nos produits</h6>
+         </div>
+      </div>

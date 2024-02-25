@@ -1,0 +1,18 @@
+.btn-inscription{
+  background-image: linear-gradient(to right , #679436 , #679436 , rgba(255, 255, 255, 0) , #679436,#679436);
+  font-weight: 700;
+  color: grey;
+}
+
+.logo {
+  
+  
+}
+.logo img {
+  object-fit: fill;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  /* border: 3px solid rgba(0, 0, 0, 0.275); */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.142);
+}

@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    overflow: auto;
 }
 
 nav.navbar{
@@ -18,9 +19,11 @@ html,body {
     /* padding-left: 40px;
     padding-right: 40px; */
     min-height: 100vh;
-    
-   background-color: rgb(255, 255, 255);
+    /* background-color: rgb(237, 237, 237); */
+    background-color: rgba(175, 223, 255, 0.092);
+  
 }
+
 .main {
     flex-grow: 1;
 }

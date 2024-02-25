@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Validator\Constraints\Length;
 
 class InscriptionType extends AbstractType
 {
@@ -22,14 +23,25 @@ class InscriptionType extends AbstractType
         
         ,TextType::class,[
     // 'label'=> 'votre nom',
+    'constraints'=> new Length(
+        [
+        'min'=>2,
+        'max'=>50
+    ]
+    ) ,
     'attr'=> [
-        'placeholder'=>'Merci de saisir votre nom'
+        'placeholder'=>'Merci de saisir votre nom' ,
+        'class'=>' '
     ]
     ]
     )
         ->add('prenom'
         ,TextType::class,[
     // 'label'=> 'votre nom',
+    'constraints'=> new Length(  [
+        'min'=>2,
+        'max'=>30
+    ]) ,
     'attr'=> [
         'placeholder'=>'Merci de saisir votre prenom'
     ]
@@ -58,7 +70,7 @@ class InscriptionType extends AbstractType
     )
 
     ->add('submit',SubmitType::class,['label'=>"S'inscrire",'attr'=>[
-        'class'=> 'btn btn-warning btn-block btn-lg w-100'
+        'class'=> 'btn  btn-block btn-lg w-100 btn-inscription  '
     ]])
     
         ;
