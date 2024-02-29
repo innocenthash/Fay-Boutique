@@ -37,7 +37,7 @@ class  RechercheType extends AbstractType {
 
               'attr'=>
                [
-                  'class'=> ''
+                  'class'=> 'input-radio'
               ]
           ]) 
 
@@ -59,5 +59,7 @@ class  RechercheType extends AbstractType {
 
     public function getBlockPrefix() {
             return '' ;
+
+            // return parent::getBlockPrefix() ;
     }
 }

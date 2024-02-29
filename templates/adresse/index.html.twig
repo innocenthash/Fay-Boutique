@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes adresses{% endblock %}
+{% block inscription %}
+ {% endblock %}
+{% block contenue %}
+
+
+<div class="container">
+
+	<div class="row mt-1">
+		<div class="col-12 col-sm-8 col-md-10 ">
+           <h4 class="text-center">Mes adresses</h4><hr>
+			
+				{% if app.user.adresses|length ==0 %}
+					<p class="text-center text-dark">Vous n'avez pas encore rensigner vos adresses</p>
+
+				{% else %}
+
+<div class="row">
+	{% for adresse in app.user.adresses %}
+		<div class="col-12 col-sm-3">
+			<div class="card mt-1">
+
+<div class="card-body">
+	<h5 class="card-title">{{adresse.pays }}|{{adresse.ville }}</h5>
+	<p class="card-text text-dark">{{adresse.nomplacement }}|{{adresse.repere }}</p>
+	<p class="card-text text-dark">{{adresse.adresse }}|{{adresse.telephone }}</p>
+	<a href="{{ path('app_adresse_modifier',{'id':adresse.id}) }}" class="btn btn-success btn-block">Modifier</a>
+	{# <a href="" class="btn btn-danger btn-block">Supprimer</a> #}
+
+	<a href="{{ path('app_adresse_supprimer',{'id':adresse.id}) }}" class="btn btn-danger btn-block">Supprimer</a>
+</div>
+
+
+			</div>
+		</div>
+	{% endfor %}
+</div>
+
+
+
+					
+				{% endif %}
+			
+		</div>
+          
+		<div class="col-12 col-sm-4 col-md-2">
+			<a href="{{ path('app_adresse_ajouter') }}" class="btn btn-primary btn-block">Créer mes adresses</a>
+		</div>
+
+	</div>
+</div>
+
+{% endblock %}

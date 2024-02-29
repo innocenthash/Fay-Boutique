@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire de mes adresses{% endblock %}
+{% block inscription %}
+ {% endblock %}
+{% block contenue %}
+
+
+<div class="container">
+   
+   <div class="row mt-1">
+         <div class="col-12 col-sm-4 col-md-6 mx-auto bg-white p-2 ">
+         <h4 class="text-center">Creation de mes adresses</h4><hr>
+              <div class="form_adresses">
+                       {{ form_start(form) }} 
+                           <div class="row">
+            <div class="col-12 col-sm-6">{{ form_row(form.nom) }}</div>
+            <div class="col-12 col-sm-6">{{ form_row(form.prenom) }}</div>
+            <div class="col-12 col-sm-6">{{ form_row(form.pays) }}</div>
+            <div class="col-12 col-sm-6">{{ form_row(form.ville) }}</div>
+            <div class="col-12 col-sm-6">{{ form_row(form.nomplacement) }}</div>
+            <div class="col-12 col-sm-6">{{ form_row(form.adresse) }}</div>
+            <div class="col-12 col-sm-6">{{ form_row(form.repere) }}</div>
+            <div class="col-12 col-sm-6">{{ form_row(form.telephone) }}</div>
+      </div>
+                       {{ form_end(form) }}
+              </div>
+           </div>
+           
+           
+      </div>
+</div>
+{% endblock %}

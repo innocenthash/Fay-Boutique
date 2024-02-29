@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commandes{% endblock %}
+
+{% block contenue %}
+
+
+<div class="container">
+	<div class="row">
+		<h4>
+			ma commande</h4>
+		<p class="text-dark">Verifier vos preferences avant de payer votre commande</p><hr>
+		<div class="col-12 col-sm-6 ">
+			<div class="">
+
+				{{ adresses }}
+			</div><hr>
+			<div class="">
+				{{ livreurs.nom }}
+				{{ livreurs.prix }}
+			</div>
+
+		</div>
+		<div class="col-12 col-sm-6  d-flex justify-content-center">
+
+			<div class="">
+            {% set total = null %}
+				{% for key,item in mon_panier %}
+					<div class="row {% if key> 0 %} mt-2 {% endif %} bg-white p-2 ">
+						<div class="col-12 col-sm-2">
+							<img src='../../uploads/images/{{item.produit.illustration}}' class='img-fluid  object-fit-cover' alt="" srcset="">
+						</div>
+						<div class="col-12 col-sm-8 d-flex justify-content-center">
+							{{ item.produit.nom }} | {{ item.produit.prix }}
+							|
+							{{ item.produit.soustitre }}
+						</div>
+
+						<div class="col-12 col-sm-2">
+							{{ item.quantite }}
+						</div>
+					</div>
+                    {% set total = total + (item.produit.prix * item.quantite) %}
+				{% endfor %}
+<hr>
+<div class="row">
+   <div class="col-12">
+         <p class="text-dark">Sous Total:  {{ (total / 100 )|number_format('2', ',', '.') }}</p>
+         <p class="text-dark">Livraison : {{ (livreurs.prix)|number_format('2', ',', '.') }}</p>
+        
+         <p class="text-dark"> Total :{{(livreurs.prix +(total / 100 ))|number_format('2', ',', '.') }}</p>
+  <a href="http://" class="btn btn-success w-100">Payer | {{(livreurs.prix +(total / 100 ))|number_format('2', ',', '.') }}</a>
+   </div>
+</div>
+				
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+{% endblock %}

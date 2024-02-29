@@ -2,9 +2,11 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Category;
-use App\Entity\Produit;
 use App\Entity\User;
+use App\Entity\Produit;
+use App\Entity\Category;
+use App\Entity\Commande;
+use App\Entity\Livraison;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -39,7 +41,7 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Letaky');
+            ->setTitle('Fay Company');
     }
 
     public function configureMenuItems(): iterable
@@ -48,6 +50,9 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Les utilisateurs', 'fas fa-user', User::class);
         yield MenuItem::linkToCrud('Les Categories', 'fas fa-list', Category::class);
         yield MenuItem::linkToCrud('Les Produits', 'fas fa-list', Produit::class);
+        yield MenuItem::linkToCrud('Les Livreurs', 'fas fa-truck', Livraison::class);
+        yield MenuItem::linkToCrud('Les commandes', 'fas fa-shopping-cart', Commande::class);
+        
 
     }
 }

@@ -1,7 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Tous les produits{% endblock %}
-
+{% block inscription %}
+ {% endblock %}
 {% block contenue %}
 
 
@@ -11,14 +12,16 @@
               <h6>Nos produits</h6><hr class=" ">
            
          </div>  
-      </div>
+
+  </div>
        <div class="row ">
-        <div class="recherche col-12 col-sm-12 col-md-2 text-center text-capitalize">
+        <div class="recherche col-12 col-sm-4  col-md-3 text-center text-capitalize">
               <h6>Triage</h6><hr class=" ">
                  {{ form(form) }}
        </div>
-        {# <div class="block-listProduit bg-white d-flex flex-row"> #}
-                {% for produit in produits %}
+       <div class="col-12 col-sm-8 col-md-9">
+            <div class="row">
+                                   {% for produit in produits %}
                 <div class="col-12 col-sm-6 col-md-4 col-lg-2 gap-1 mb-2">
               <div class="block-produit ">
              
@@ -41,6 +44,10 @@
 
          
         {% endfor %}
+            </div>
+      </div>
+        {# <div class="block-listProduit bg-white d-flex flex-row"> #}
+
        {# </div> #}
        
          

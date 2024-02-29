@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commandes{% endblock %}
+
+{% block contenue %}
+
+
+<div class="container">
+	<div class="row">
+		<h4>Je passe ma commande</h4>
+		<p class="text-dark">Choisissez vos preferences avant de passer votre commande</p><hr>
+		<div class="col-12 col-sm-6 d-flex justify-content-center">
+			<div class="">
+				{% set formHtml %}
+				  {{ form_start(form ,{ action: path('recap_commande') }) }}
+
+                  {{ form_end(form) }}
+					{% endset %}
+					{{ formHtml|replace({'[br]':'<br>'})|raw }}
+
+				</div>
+
+			</div>
+			<div class="col-12 col-sm-6  d-flex justify-content-center">
+
+				<div class="">
+					{% for key,item in mon_panier %}
+                        <div class="row {% if key> 0 %} mt-2 {% endif %} bg-white p-2 ">
+						<div class="col-12 col-sm-2">
+							<img src='uploads/images/{{item.produit.illustration}}' class='img-fluid  object-fit-cover' alt="" srcset="">
+						</div>
+						<div class="col-12 col-sm-8 d-flex justify-content-center">
+							{{ item.produit.nom }} | {{ item.produit.nom }}
+						</div>
+
+						<div class="col-12 col-sm-2">
+							{{ item.quantite }}
+						</div> 
+					</div>
+                    {% endfor %}
+					<p class="text-dark">Bouton pour payer</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+{% endblock %}
